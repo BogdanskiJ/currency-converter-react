@@ -1,13 +1,77 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  box-sizing: border-boxs;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+.body {
+  max-width: 700px;
+  font-family: "Poppins", sans-serif;
+  margin: 20px auto;
+  text-align: justify;
+}
+
+.body__header {
+  margin: auto;
+  padding: 1px 10px;
+  text-align: center;
+  background-color: rgb(246, 246, 234);
+  width: fit-content;
+  border-radius: 20px;
+  box-shadow: 5px 4px 6px 0px #B9BFB9;
+}
+
+/*.body__backgroundImage {
+  background-image: url(../images/background.jpg);
+  background-size: 800px;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+}*/
+
+
+.section__sectionHeader {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+.section__field {
+  margin-bottom: 0;
+  
+}
+
+.section__form {
+  margin: auto;
+  max-width: 70%;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.434);
+  background-color: #aeeae3;
+  box-shadow: 8px 8px 24px 0px rgba(126, 196, 188, 1);
+}
+
+.section__label {
+  max-width: 250px;
+  display: inline-block;
+  margin-right: 5px;
+  max-width: 70%;
+  text-align: center;
+  border: 1px rgb(0, 0, 0) solid;
+  border-radius: 20px;
+}
+
+.section__label--name {
+  border: none;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+
+.section__fieldset {
+  border: 0px;
+  padding: 0;
+  margin: auto;
+  text-align: center;
 }
