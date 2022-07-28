@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import LabelSourceCurrency from "./LabelSourceCurrency";
 import LabelTargetCurrency from "./LabelTargetCurrency";
 import SourceCurrencyValue from "./SourceCurrencyValue";
+import TargetCurrencyValue from "./TargetCurrencyValue";
+import ButtonForm from "./ButtonForm";
+
 
 function App() {
 
@@ -12,20 +15,38 @@ function App() {
   const onSelectTargetCurrencyChange = ({ target }) => setTargetCurrency(target.value);
 
   const [sourceCurrencyValue, setSourceCurrencyValue] = useState(0);
-  const onChangeCurrencyValue = ({ target }) => setSourceCurrencyValue(target.value);
+  //const onChangeCurrencyValue = ({ target }) => setSourceCurrencyValue(target.value);
+
+  const [targetCurrencyValue, setTargetCurrencyValue] = useState("");
 
 
+  const convertValue = () => {
+    setTargetCurrencyValue(targetCurrencyValue => 2*sourceCurrencyValue);
+    
+  };
 
-  <header className="body__header">
-    <h1>💰 KALKULATOR WALUT</h1>
-  </header>
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  // const [result, setResult] = useState(0);
+  // const onChangeCurrencyValue = ({ target }) => setSourceCurrencyValue(target.value);
+
+  const result = (sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue) => {
+    setTargetCurrencyValue(targetCurrencyValue => 2 * sourceCurrencyValue)
+    return targetCurrencyValue;
+  }
+
 
   return (
 
     <main>
       <section>
         <h2 className="section__sectionHeader">Przelicz swoją walutę!</h2>
-        <form className="section__form" action="/stronadocelowa" method="post">
+        <form className="section__form" action="/stronadocelowa" method="post"
+          onSubmit={onFormSubmit}
+        >
           <fieldset className="section__fieldset">
             <p>
               <LabelSourceCurrency
@@ -39,7 +60,6 @@ function App() {
               <SourceCurrencyValue
                 sourceCurrencyValue={sourceCurrencyValue}
                 setSourceCurrencyValue={setSourceCurrencyValue}
-                onChangeCurrencyValue={onChangeCurrencyValue}
               />
             </p>
 
@@ -53,18 +73,18 @@ function App() {
                 onSelectTargetCurrencyChange={onSelectTargetCurrencyChange}
               />
             </p>
+            <ButtonForm
+              convertValue={convertValue}
+              sourceCurrencyValue={sourceCurrencyValue}
+            />
             <p>
-              <label>
-                <span className="section__label section__label--name">Otrzymana kwota: </span>
-                <input
-                  className="section__label" type="number" name="przeliczonaKwota"
-                  placeholder="Kwota" min="0" step="any" readOnly
-                />
-              </label>
+              <TargetCurrencyValue
+                targetCurrencyValue={targetCurrencyValue}
+                setTargetCurrencyValue={setTargetCurrencyValue}
+              />
             </p>
           </fieldset>
         </form>
-
       </section>
     </main>
   );
