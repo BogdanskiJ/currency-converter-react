@@ -8,8 +8,8 @@ const TargetCurrencyValue = ({ targetCurrencyValue, setTargerCurrencyValue }) =>
             type="number"
             name="przeliczonaKwota"
             placeholder="Kwota"
+            onChange={(event) => setTargerCurrencyValue(event.target.value).toFixed(2)}
             value={targetCurrencyValue}
-            onChange={(event) => setTargerCurrencyValue(event.target.value)}
         />
     </label>
 );

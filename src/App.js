@@ -10,34 +10,68 @@ function App() {
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
   const onSelectSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);
-
   const [targetCurrency, setTargetCurrency] = useState("PLN");
   const onSelectTargetCurrencyChange = ({ target }) => setTargetCurrency(target.value);
-
   const [sourceCurrencyValue, setSourceCurrencyValue] = useState(0);
-  //const onChangeCurrencyValue = ({ target }) => setSourceCurrencyValue(target.value);
-
-  const [targetCurrencyValue, setTargetCurrencyValue] = useState("");
-
+  const [targetCurrencyValue, setTargetCurrencyValue] = useState(0);
 
   const convertValue = () => {
-    setTargetCurrencyValue(targetCurrencyValue => 2*sourceCurrencyValue);
-    
+    result(sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue);
   };
 
+  const USD = 4.28;
+  const EUR = 4.59;
+  const PLN = 1.00;
 
   const onFormSubmit = (event) => {
     event.preventDefault();
   };
 
-  // const [result, setResult] = useState(0);
-  // const onChangeCurrencyValue = ({ target }) => setSourceCurrencyValue(target.value);
-
   const result = (sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue) => {
-    setTargetCurrencyValue(targetCurrencyValue => 2 * sourceCurrencyValue)
-    return targetCurrencyValue;
-  }
+    setTargetCurrencyValue(targetCurrencyValue => {
+      switch (sourceCurrency) {
+        case "PLN":
+          switch (targetCurrency) {
+            case "PLN":
+              setTargetCurrencyValue((sourceCurrencyValue * (PLN / PLN)).toFixed(2));
+              break;
+            case "USD":
+              setTargetCurrencyValue((sourceCurrencyValue * (PLN / USD)).toFixed(2));
+              break;
+            default:
+              setTargetCurrencyValue((sourceCurrencyValue * (PLN / EUR)).toFixed(2));
+          }
+          break;
 
+        case "USD":
+          switch (targetCurrency) {
+            case "PLN":
+              setTargetCurrencyValue((sourceCurrencyValue * (USD / PLN)).toFixed(2));
+              break;
+            case "USD":
+              setTargetCurrencyValue((sourceCurrencyValue * (PLN / PLN)).toFixed(2));
+              break;
+            default:
+              setTargetCurrencyValue((sourceCurrencyValue * (USD / EUR)).toFixed(2));
+          }
+          break;
+
+        default:
+          switch (targetCurrency) {
+            case "PLN":
+              setTargetCurrencyValue((sourceCurrencyValue * (EUR / PLN)).toFixed(2));
+              break;
+            case "USD":
+              setTargetCurrencyValue((sourceCurrencyValue * (EUR / USD)).toFixed(2));
+              break;
+            default:
+              setTargetCurrencyValue((sourceCurrencyValue * (PLN / PLN)).toFixed(2));
+          }
+          break;
+      }
+    }
+    )
+  }
 
   return (
 
