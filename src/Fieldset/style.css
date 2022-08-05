@@ -1,0 +1,45 @@
+.section__header {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.section__form {
+    margin: auto;
+    max-width: 70%;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.434);
+    background-color: #aeeae3;
+    box-shadow: 8px 8px 24px 0px rgba(126, 196, 188, 1);
+    padding: 10px;
+    text-align: center;
+}
+
+.section__field {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.section__fieldset {
+    border: 0px;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.section__label {
+    max-width: 250px;
+    display: inline-block;
+    margin-right: 5px;
+    max-width: 70%;
+    text-align: center;
+    border: 1px rgb(0, 0, 0) solid;
+    border-radius: 20px;
+}
+
+.section__label--name {
+    border: none;
+    font-size: 1.1em;
+    line-height: 1.2;
+}
