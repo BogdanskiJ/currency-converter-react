@@ -1,12 +1,12 @@
 import "./style.css";
 
 const SourceCurrencyValue = ({ sourceCurrencyValue, setSourceCurrencyValue }) => (
-    <label>
+    <label className="section__labelFlex">
         <span className="section__label section__label--name"
         >Podaj kwotę: </span>
         <input
-            className="section__label" 
-            type="number" 
+            className="section__label"
+            type="number"
             value={sourceCurrencyValue}
             onChange={(event) => setSourceCurrencyValue(event.target.value)}
             name="kwota" min="0"

@@ -2,7 +2,7 @@ import "./style.css";
 
 const LabelSourceCurrency = ({ sourceCurrency, setSourceCurrency, onSelectSourceCurrencyChange }) => (
 
-  <label>
+  <label className="section__labelFlex">
     <span className="section__label section__label--name">Wybierz pierwszą walutę: </span>
     <select
       value={sourceCurrency}

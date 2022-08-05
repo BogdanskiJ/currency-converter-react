@@ -1,7 +1,7 @@
 import "./style.css";
 
 const TargetCurrencyValue = ({ targetCurrencyValue, setTargerCurrencyValue }) => (
-    <label>
+    <label className="section__labelFlex">
         <span className="section__label section__label--name">Otrzymana kwota: </span>
         <input
             className="section__label"
