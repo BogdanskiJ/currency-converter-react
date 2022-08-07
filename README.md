@@ -1,8 +1,28 @@
-# Getting Started with Create React App
+# Currency converter - React
+
+## Table of content
+- [Demo](#Demo)
+- [General info](#general-info)
+- [How it works?](#how-it-works)
+- [Technologies/Conventions I used](#technologiesconventions-i-used)
+- [Available Scripts](#available-scripts)
+
+## Demo
+
+https://kubabogd.github.io/currency-converter-react/
+## General info
+Currency conventer online. You can check how much money you have in foreign currency.
+## How it works?
+![How_it_works_currency_converter_react](C:\dev\currency-converter-react\images\Currency-Converter-React.gif)
+
+## Technologies/Conventions I used
+Project is created with:
+- HTML
+- BEM
+- CSS
+- JavaScript
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-##Demo
-https://kubabogd.github.io/currency-converter-react/
 
 ## Available Scripts
 
