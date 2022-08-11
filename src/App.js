@@ -86,12 +86,13 @@ function App() {
             targetCurrencyValue={targetCurrencyValue}
             setTargetCurrencyValue={setTargetCurrencyValue}
             onTargetCurrencyChange={onTargetCurrencyChange}
+            buttonForm={
+              <ButtonForm
+                convertValue={convertValue}
+                sourceCurrencyValue={sourceCurrencyValue}
+              />}
           />}
-        buttonForm={
-          <ButtonForm
-            convertValue={convertValue}
-            sourceCurrencyValue={sourceCurrencyValue}
-          />}
+        
       />
     </Container >
   );
