@@ -27,19 +27,3 @@
     text-align: center;
     justify-content: center;
 }
-
-.section__label {
-    max-width: 250px;
-    display: inline-block;
-    margin-right: 5px;
-    max-width: 70%;
-    text-align: center;
-    border: 1px rgb(0, 0, 0) solid;
-    border-radius: 20px;
-}
-
-.section__label--name {
-    border: none;
-    font-size: 1.1em;
-    line-height: 1.2;
-}

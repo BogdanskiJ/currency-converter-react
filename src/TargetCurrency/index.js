@@ -1,26 +1,28 @@
-
+import "./style.css";
 const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrencyValue, setTargerCurrencyValue }) => (
-    <label className="section__labelFlex">
-        <div>
-            <span className="section__label section__label--name">Wybierz drugą walutę: </span>
+    <label className="targetCurrency__labelFlex">
+        <div className="targetCurrency__margin">
+            <span className="targetCurrency__label targetCurrency__label--name">Wybierz drugą walutę: </span>
             <select
                 value={targetCurrency}
                 onChange={onTargetCurrencyChange}
-                className="section__label">
+                className="targetCurrency__label">
                 <option>PLN</option>
                 <option>USD</option>
                 <option>EUR</option>
             </select>
         </div>
-        <span className="section__label section__label--name">Otrzymana kwota: </span>
+        <div className="targetCurrency__margin">
+        <span className="targetCurrency__label targetCurrency__label--name">Otrzymana kwota: </span>
         <input
-            className="section__label"
+            className="targetCurrency__label"
             type="number"
             value={targetCurrencyValue}
             onChange={(event) => setTargerCurrencyValue(event.target.value).toFixed(2)}
             name="przeliczonaKwota"
             placeholder="Kwota"
         />
+        </div>
     </label>
 );
 

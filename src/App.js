@@ -4,7 +4,7 @@ import TargetCurrency from "./TargetCurrency";
 import ButtonForm from "./ButtonForm";
 import Container from "./Container";
 import Header from "./Header";
-import Fieldset from "./Fieldset";
+import Section from "./Section";
 
 function App() {
 
@@ -38,7 +38,6 @@ function App() {
               setTargetCurrencyValue((sourceCurrencyValue * (PLN / EUR)).toFixed(2));
           }
           break;
-
         case "USD":
           switch (targetCurrency) {
             case "PLN":
@@ -51,7 +50,6 @@ function App() {
               setTargetCurrencyValue((sourceCurrencyValue * (USD / EUR)).toFixed(2));
           }
           break;
-
         default:
           switch (targetCurrency) {
             case "PLN":
@@ -72,8 +70,8 @@ function App() {
   return (
     <Container>
       <Header title="💰 KALKULATOR WALUT" />
-      <Fieldset
-        sourceCurrencyFieldset={
+      <Section
+        sourceCurrencySection={
           <SourceCurrency
             sourceCurrency={sourceCurrency}
             setSourceCurrency={setSourceCurrency}
@@ -81,7 +79,7 @@ function App() {
             setSourceCurrencyValue={setSourceCurrencyValue}
             onSourceCurrencyChange={onSourceCurrencyChange}
           />}
-        targetCurrencyFieldset={
+        targetCurrencySection={
           <TargetCurrency
             targetCurrency={targetCurrency}
             setTargetCurrency={setTargetCurrency}

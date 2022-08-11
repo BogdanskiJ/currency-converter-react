@@ -1,19 +1,18 @@
 @media (max-width: 500px) {
-    .sourceCurrency__labelFlex {
+    .targetCurrency__labelFlex {
         display: flex;
         align-content: center;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin: auto;
     }
 
-    .sourceCurrency__margin {
+    .targetCurrency__margin {
         margin: 5px;
     }
 }
 
-.sourceCurrency__label {
+.targetCurrency__label {
     max-width: 250px;
     display: inline-block;
     margin-right: 5px;
@@ -23,12 +22,12 @@
     border-radius: 20px;
 }
 
-.sourceCurrency__label--name {
+.targetCurrency__label--name {
     border: none;
     font-size: 1.1em;
     line-height: 1.2;
 }
 
-.sourceCurrency__margin {
+.targetCurrency__margin {
     margin: 10px;
 }
