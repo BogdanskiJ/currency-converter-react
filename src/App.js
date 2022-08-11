@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import LabelSourceCurrency from "./LabelSourceCurrency";
-import LabelTargetCurrency from "./LabelTargetCurrency";
-import SourceCurrencyValue from "./SourceCurrencyValue";
-import TargetCurrencyValue from "./TargetCurrencyValue";
+import SourceCurrency from "./SourceCurrency";
+import TargetCurrency from "./TargetCurrency";
 import ButtonForm from "./ButtonForm";
 import Container from "./Container";
 import Header from "./Header";
@@ -11,9 +9,9 @@ import Fieldset from "./Fieldset";
 function App() {
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
-  const onSelectSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);
+  const onSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);
   const [targetCurrency, setTargetCurrency] = useState("PLN");
-  const onSelectTargetCurrencyChange = ({ target }) => setTargetCurrency(target.value);
+  const onTargetCurrencyChange = ({ target }) => setTargetCurrency(target.value);
   const [sourceCurrencyValue, setSourceCurrencyValue] = useState(0);
   const [targetCurrencyValue, setTargetCurrencyValue] = useState(0);
 
@@ -72,36 +70,29 @@ function App() {
   }
 
   return (
-
     <Container>
       <Header title="💰 KALKULATOR WALUT" />
       <Fieldset
-        labelSourceCurrency={
-          <LabelSourceCurrency
+        sourceCurrencyFieldset={
+          <SourceCurrency
             sourceCurrency={sourceCurrency}
             setSourceCurrency={setSourceCurrency}
-            onSelectSourceCurrencyChange={onSelectSourceCurrencyChange}
-          />}
-        sourceCurrencyValue={
-          <SourceCurrencyValue
             sourceCurrencyValue={sourceCurrencyValue}
             setSourceCurrencyValue={setSourceCurrencyValue}
+            onSourceCurrencyChange={onSourceCurrencyChange}
           />}
-        labelTargetCurrency={
-          <LabelTargetCurrency
+        targetCurrencyFieldset={
+          <TargetCurrency
             targetCurrency={targetCurrency}
             setTargetCurrency={setTargetCurrency}
-            onSelectTargetCurrencyChange={onSelectTargetCurrencyChange}
+            targetCurrencyValue={targetCurrencyValue}
+            setTargetCurrencyValue={setTargetCurrencyValue}
+            onTargetCurrencyChange={onTargetCurrencyChange}
           />}
         buttonForm={
           <ButtonForm
             convertValue={convertValue}
             sourceCurrencyValue={sourceCurrencyValue}
-          />}
-        targetCurrencyValue={
-          <TargetCurrencyValue
-            targetCurrencyValue={targetCurrencyValue}
-            setTargetCurrencyValue={setTargetCurrencyValue}
           />}
       />
     </Container >
