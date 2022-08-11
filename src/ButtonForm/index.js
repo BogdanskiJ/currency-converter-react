@@ -1,4 +1,3 @@
-import SourceCurrencyValue from "../SourceCurrencyValue";
 import "./style.css";
 
 const ButtonForm = ({ convertValue }) => (
