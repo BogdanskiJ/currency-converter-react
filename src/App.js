@@ -6,6 +6,8 @@ import Container from "./Container";
 import Header from "./Header";
 import Section from "./Section";
 
+import TimeAndDate from "./TimeAndDate";
+
 function App() {
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
@@ -24,7 +26,7 @@ function App() {
   const PLN = 1.00;
 
   const result = (sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue) => {
-    setTargetCurrencyValue(targetCurrencyValue => {
+    setTargetCurrencyValue(() => {
       switch (sourceCurrency) {
         case "PLN":
           switch (targetCurrency) {
@@ -71,6 +73,8 @@ function App() {
     <Container>
       <Header title="💰 KALKULATOR WALUT" />
       <Section
+        timeAndDate={
+          <TimeAndDate/>}
         sourceCurrencySection={
           <SourceCurrency
             sourceCurrency={sourceCurrency}
@@ -92,7 +96,7 @@ function App() {
                 sourceCurrencyValue={sourceCurrencyValue}
               />}
           />}
-        
+
       />
     </Container >
   );
