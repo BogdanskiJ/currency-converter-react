@@ -4,7 +4,7 @@
 - [Demo](#Demo)
 - [General info](#general-info)
 - [How it works?](#how-it-works)
-- [Technologies/Conventions I used](#technologiesconventions-i-used)
+- [Used Technologies](#technologiesconventions-i-used)
 - [Available Scripts](#available-scripts)
 
 ## Demo
