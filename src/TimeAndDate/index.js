@@ -1,20 +1,23 @@
-import { Data } from "./styled"
-import { useCurrentDate } from "./useCurrentDate";
+import React from 'react';
+import "./style.css";
+import { useCurrentDate } from './useCurrentDate.js'
 
 const TimeAndDate = () => {
+
     const date = useCurrentDate();
 
     return (
-        <Data>
-            Dzisiaj jest {date.toLocaleString(undefined, {
+        <p className="clock">
+            {date.toLocaleString(date, {
+                weekday: "long",
                 hour: "numeric",
                 minute: "numeric",
                 second: "numeric",
                 day: "numeric",
                 month: "long",
             })}
-        </Data>
-    );
-};
+        </p>
+    )
+}
 
-export default TimeAndDate;
+export default TimeAndDate
