@@ -8,14 +8,14 @@ const TimeAndDate = () => {
 
     return (
         <p className="clock">
-            {date.toLocaleString(date, {
+            {`Dzisiaj jest ${date.toLocaleString(date, {
                 weekday: "long",
                 hour: "numeric",
                 minute: "numeric",
                 second: "numeric",
                 day: "numeric",
                 month: "long",
-            })}
+            })}`}
         </p>
     )
 }
