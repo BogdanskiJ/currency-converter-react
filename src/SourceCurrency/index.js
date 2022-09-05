@@ -26,6 +26,7 @@ const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrency
         onChange={(event) => setSourceCurrencyValue(event.target.value)}
         name="kwota" min="0"
         step="any"
+        autoFocus
       />
     </div>
   </label>
