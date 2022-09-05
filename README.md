@@ -15,12 +15,15 @@ Currency conventer online. You can check how much money you have in foreign curr
 ## How it works?
 ![CurrencyConverterReact](images/Currency-Converter-React.gif)
 
-## Technologies/Conventions I used
+## Used Technologies
 Project is created with:
 - HTML
-- BEM
 - CSS
 - JavaScript
+- React
+- BEM
+- Create-React-App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
