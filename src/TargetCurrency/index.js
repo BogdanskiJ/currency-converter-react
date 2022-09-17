@@ -1,35 +1,34 @@
 import ButtonForm from "../ButtonForm";
-import "./style.css";
+import { Input, Label, LabelFlex, Margin, Select } from "./styled";
+
 const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrencyValue, setTargerCurrencyValue, buttonForm }) => (
-    <label className="targetCurrency__labelFlex">
-        <div className="targetCurrency__margin">
-            <span className="targetCurrency__label targetCurrency__label--name">Wybierz drugą walutę: </span>
-            <select
+    <LabelFlex>
+        <Margin>
+            <Label>Wybierz drugą walutę: </Label>
+            <Select
                 value={targetCurrency}
                 onChange={onTargetCurrencyChange}
-                className="targetCurrency__label">
+            >
                 <option>PLN</option>
                 <option>USD</option>
                 <option>EUR</option>
-            </select>
-        </div>
+            </Select>
+        </Margin>
         <div>
             {buttonForm}
         </div>
 
-
-        <div className="targetCurrency__margin">
-            <span className="targetCurrency__label targetCurrency__label--name">Otrzymana kwota: </span>
-            <input
-                className="targetCurrency__label"
+        <Margin>
+            <Label>Otrzymana kwota: </Label>
+            <Input
                 type="number"
                 value={targetCurrencyValue}
                 onChange={(event) => setTargerCurrencyValue(event.target.value).toFixed(2)}
                 name="przeliczonaKwota"
                 placeholder="Kwota"
             />
-        </div>
-    </label>
+        </Margin>
+    </LabelFlex>
 );
 
 export default TargetCurrency; 
