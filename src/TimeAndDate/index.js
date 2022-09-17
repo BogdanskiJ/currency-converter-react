@@ -1,13 +1,11 @@
 import React from 'react';
-import "./style.css";
+import { Clock } from "./styled";
 import { useCurrentDate } from './useCurrentDate.js'
 
 const TimeAndDate = () => {
-
     const date = useCurrentDate();
-
     return (
-        <div className="clock">
+        <Clock>
             {`Dzisiaj jest ${date.toLocaleString(date, {
                 weekday: "long",
                 hour: "numeric",
@@ -16,8 +14,8 @@ const TimeAndDate = () => {
                 day: "numeric",
                 month: "long",
             })}`}
-        </div>
+        </Clock>
     )
-}
+};
 
 export default TimeAndDate
