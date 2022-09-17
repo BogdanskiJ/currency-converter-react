@@ -1,10 +1,12 @@
-.section__header {
+import styled from "styled-components";
+
+export const SectionHeader = styled.h2`
     text-align: center;
     padding: 5px;
     margin: 5px;
-}
+`;
 
-.section__form {
+export const SectionForm = styled.form`
     margin: auto;
     max-width: 70%;
     border-radius: 40px;
@@ -13,17 +15,14 @@
     box-shadow: 8px 8px 24px 0px rgba(126, 196, 188, 1);
     padding: 10px;
     text-align: center;
-}
+`;
 
-.section__field {
+export const SectionField = styled.div`
     margin-bottom: 0;
     margin-top: 10px;
-}
-
-.section__fieldset {
     border: 0px;
     padding: 0;
-    margin: auto;
+  
     text-align: center;
     justify-content: center;
-}
+`;

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./style.css";
+import { SectionHeader, SectionForm, SectionField } from "./styled";
+
+
 
 const onFormSubmit = (event) => {
     event.preventDefault();
@@ -7,16 +9,16 @@ const onFormSubmit = (event) => {
 
 const Section = ({ sourceCurrencySection, targetCurrencySection, buttonForm, timeAndDate }) => (
     <section>
-        <h2 className="section__header">Przelicz swoją walutę!</h2>
-        <form className="section__form" action="/stronadocelowa" method="post"
+        <SectionHeader>Przelicz swoją walutę!</SectionHeader>
+        <SectionForm action="/stronadocelowa" method="post"
             onSubmit={onFormSubmit}>
-            <div className="section__field section__fieldset">
+            <SectionField>
                 {timeAndDate}
                 {sourceCurrencySection}
                 {targetCurrencySection}
                 {buttonForm}
-            </div>
-        </form>
+            </SectionField>
+        </SectionForm>
     </section>
 );
 export default Section;
