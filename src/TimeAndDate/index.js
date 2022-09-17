@@ -7,7 +7,7 @@ const TimeAndDate = () => {
     const date = useCurrentDate();
 
     return (
-        <p className="clock">
+        <div className="clock">
             {`Dzisiaj jest ${date.toLocaleString(date, {
                 weekday: "long",
                 hour: "numeric",
@@ -16,7 +16,7 @@ const TimeAndDate = () => {
                 day: "numeric",
                 month: "long",
             })}`}
-        </p>
+        </div>
     )
 }
 

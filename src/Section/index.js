@@ -10,12 +10,12 @@ const Section = ({ sourceCurrencySection, targetCurrencySection, buttonForm, tim
         <h2 className="section__header">Przelicz swoją walutę!</h2>
         <form className="section__form" action="/stronadocelowa" method="post"
             onSubmit={onFormSubmit}>
-            <p className="section__field section__fieldset">
+            <div className="section__field section__fieldset">
                 {timeAndDate}
                 {sourceCurrencySection}
                 {targetCurrencySection}
                 {buttonForm}
-            </p>
+            </div>
         </form>
     </section>
 );

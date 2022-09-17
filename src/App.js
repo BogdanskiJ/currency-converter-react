@@ -7,6 +7,7 @@ import Header from "./Header";
 import Section from "./Section";
 
 import TimeAndDate from "./TimeAndDate";
+import styled from "styled-components";
 
 function App() {
 

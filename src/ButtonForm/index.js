@@ -1,11 +1,12 @@
-import "./style.css";
+import React from "react";
+import { Button, Buttonn } from "./styled";
 
 const ButtonForm = ({ convertValue }) => (
-    <button className="button"
+    <Buttonn
         onClick={() => convertValue()}
     >
         Przelicz walutę!
-    </button>
+    </Buttonn>
 );
 
 export default ButtonForm; 
