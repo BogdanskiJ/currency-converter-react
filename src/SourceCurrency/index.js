@@ -1,26 +1,23 @@
 import React, { useState } from "react";
-import "./style.css";
+import { Input, Label, LabelFlex, Margin, Select } from "./styled";
 
 
 
 const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue }) => (
-  <label className="sourceCurrency__labelFlex">
-    <div className="sourceCurrency__margin">
-      <span className="sourceCurrency__label sourceCurrency__label--name">Wybierz pierwszą walutę: </span>
-      <select
+  <LabelFlex>
+    <Margin>
+      <Label>Wybierz pierwszą walutę: </Label>
+      <Select
         value={sourceCurrency}
-        onChange={onSourceCurrencyChange}
-        className="sourceCurrency__label">
+        onChange={onSourceCurrencyChange}>
         <option>PLN</option>
         <option>USD</option>
         <option>EUR</option>
-      </select>
-    </div>
-    <div className="sourceCurrency__margin">
-      <span className="sourceCurrency__label sourceCurrency__label--name"
-      >Podaj kwotę: </span>
-      <input
-        className="sourceCurrency__label"
+      </Select>
+    </Margin>
+    <Margin>
+      <Label>Podaj kwotę: </Label>
+      <Input
         type="number"
         value={sourceCurrencyValue}
         onChange={(event) => setSourceCurrencyValue(event.target.value)}
@@ -28,8 +25,8 @@ const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrency
         step="any"
         autoFocus
       />
-    </div>
-  </label>
+    </Margin>
+  </LabelFlex>
 );
 
 export default SourceCurrency;
