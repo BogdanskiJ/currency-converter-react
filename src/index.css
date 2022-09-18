@@ -13,9 +13,9 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 20px auto;
   text-align: justify;
-  background-image: url(../images/background.jpg);
-  background-size: 800px;
-  background-repeat: repeat;
+  background-image: url(../images/currency-converter-react-background.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
   background-position: center;
   background-attachment: fixed;
 }
