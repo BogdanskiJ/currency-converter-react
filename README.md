@@ -9,7 +9,7 @@
 
 ## Demo
 
-https://kubabogd.github.io/currency-converter-react/
+[Currency Converter](https://kubabogd.github.io/currency-converter-react/)
 ## General info
 Currency conventer online. You can check how much money you have in foreign currency.
 ## How it works?
