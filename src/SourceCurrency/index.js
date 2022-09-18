@@ -17,7 +17,8 @@ const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrency
     </Margin>
     <Margin>
       <Label>Podaj kwotę: </Label>
-      <Input
+      <Select
+        as="input"
         type="number"
         value={sourceCurrencyValue}
         onChange={(event) => setSourceCurrencyValue(event.target.value)}
