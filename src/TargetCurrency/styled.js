@@ -26,21 +26,10 @@ export const Label = styled.label`
     margin-right: 5px;
     max-width: 70%;
     text-align: center;
-    border: 1px rgb(0, 0, 0) solid;
     border-radius: 20px;
     border: none;
     font-size: 1.1em;
     line-height: 1.2;
-`;
-
-export const Input = styled.input`
-    max-width: 250px;
-    display: inline-block;
-    margin-right: 5px;
-    max-width: 70%;
-    text-align: center;
-    border: 1px rgb(0, 0, 0) solid;
-    border-radius: 20px;
 `;
 
 export const Select = styled.select`
