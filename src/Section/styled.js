@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const SectionHeader = styled.h2`
     text-align: center;
+    background-color: #f6f6ea;
     padding: 5px;
-    margin: 5px;
+    margin: 5px auto;
+    max-width: fit-content;
+    border-radius: 5px;
 `;
 
 export const SectionForm = styled.form`

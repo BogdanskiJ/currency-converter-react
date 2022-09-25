@@ -33,6 +33,7 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
+    min-width: 70px;
     max-width: 250px;
     display: inline-block;
     margin-right: 5px;
