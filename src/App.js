@@ -8,12 +8,11 @@ import Section from "./Section";
 import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
 import styled from "styled-components";
+import CurrencyFromECB from "./CurrencyFromECB";
 
 function App() {
 
-  const kursyWalut = () => axios.get('https://api.exchangerate.host/latest')
-    .then(response => console.log(response.data));
-  kursyWalut();
+  CurrencyFromECB();
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
   const onSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);

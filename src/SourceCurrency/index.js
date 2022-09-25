@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Input, Label, LabelFlex, Margin, Select } from "./styled";
 
-
-
 const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue }) => (
   <LabelFlex>
     <Margin>

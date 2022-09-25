@@ -1,4 +1,3 @@
-import ButtonForm from "../ButtonForm";
 import { Input, Label, LabelFlex, Margin, Select } from "./styled";
 
 const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrencyValue, setTargerCurrencyValue, buttonForm }) => (
