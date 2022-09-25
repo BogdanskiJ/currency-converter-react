@@ -5,11 +5,15 @@ import ButtonForm from "./ButtonForm";
 import Container from "./Container";
 import Header from "./Header";
 import Section from "./Section";
-
+import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
 import styled from "styled-components";
 
 function App() {
+
+  const kursyWalut = () => axios.get('https://api.exchangerate.host/latest')
+    .then(response => console.log(response.data));
+  kursyWalut();
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
   const onSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);
@@ -75,7 +79,7 @@ function App() {
       <Header title="💰 KALKULATOR WALUT" />
       <Section
         timeAndDate={
-          <TimeAndDate/>}
+          <TimeAndDate />}
         sourceCurrencySection={
           <SourceCurrency
             sourceCurrency={sourceCurrency}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { HeaderJs, titleJs } from "./styled";
+import { HeaderJs, HeaderStyled } from "./styled";
 
 const Header = ({ title }) => (
     <HeaderJs>
-        <h1 titleJs>{title}</h1>
+        <HeaderStyled>{title}</HeaderStyled>
     </HeaderJs>
 );
 
