@@ -10,7 +10,7 @@ const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrency
         value={currencyFromECB}
         onChange={onSourceCurrencyChange}>
         {
-          (Object.keys(CurrencyFromECB.rates)).map(cash => (
+          (Object.keys(currencyFromECB.rates)).map(cash => (
             <option key={cash}>
               {cash}
             </option>
