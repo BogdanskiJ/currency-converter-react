@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { SectionHeader, SectionForm, SectionField } from "./styled";
 
 
-
 const onFormSubmit = (event) => {
     event.preventDefault();
 };

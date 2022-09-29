@@ -1,5 +1,5 @@
 import { Input, Label, LabelFlex, Margin, Select } from "./styled";
-
+import CurrencyFromECB from "../CurrencyFromECB";
 const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrencyValue, setTargerCurrencyValue, buttonForm }) => (
     <LabelFlex>
         <Margin>
@@ -28,6 +28,7 @@ const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrency
                 placeholder="Kwota"
             />
         </Margin>
+        <CurrencyFromECB/>
     </LabelFlex>
 );
 

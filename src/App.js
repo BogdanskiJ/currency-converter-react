@@ -8,11 +8,9 @@ import Section from "./Section";
 import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
 import styled from "styled-components";
-import CurrencyFromECB from "./CurrencyFromECB";
 
 function App() {
 
-  CurrencyFromECB();
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
   const onSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);

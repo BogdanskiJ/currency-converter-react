@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { Input, Label, LabelFlex, Margin, Select } from "./styled";
+import CurrencyFromECB, { currencyFromECB, ratesObject } from "../CurrencyFromECB";
 
-const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue }) => (
+const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue, currencyFromECB }) => (
   <LabelFlex>
     <Margin>
       <Label>Wybierz pierwszą walutę: </Label>
       <Select
-        value={sourceCurrency}
+        value={currencyFromECB}
         onChange={onSourceCurrencyChange}>
-        <option>PLN</option>
-        <option>USD</option>
-        <option>EUR</option>
+        {
+          (Object.keys(CurrencyFromECB.rates)).map(cash => (
+            <option key={cash}>
+              {cash}
+            </option>
+          ))
+        }
       </Select>
     </Margin>
     <Margin>
