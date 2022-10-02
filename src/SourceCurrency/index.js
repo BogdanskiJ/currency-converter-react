@@ -1,36 +1,52 @@
 import React, { useState } from "react";
 import { Input, Label, LabelFlex, Margin, Select } from "./styled";
-import CurrencyFromECB, { currencyFromECB, ratesObject } from "../CurrencyFromECB";
+import { useCurrencyFromECB } from "../CurrencyFromECB";
 
-const SourceCurrency = ({ sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue, currencyFromECB }) => (
-  <LabelFlex>
-    <Margin>
-      <Label>Wybierz pierwszą walutę: </Label>
-      <Select
-        value={currencyFromECB}
-        onChange={onSourceCurrencyChange}>
-        {
-          (Object.keys(currencyFromECB.rates)).map(cash => (
+const SourceCurrency = ({
+
+  sourceCurrency, onSourceCurrencyChange, targetCurrencyLabel, sourceCurrencyValue, setSourceCurrencyValue }) => {
+
+  const currencyFromECB = useCurrencyFromECB();
+
+  return (
+    <LabelFlex>
+      <Margin>
+        <Label>Wybierz pierwszą walutę: </Label>
+        <Select
+          value={sourceCurrency}
+          onChange={onSourceCurrencyChange}>
+          {Object.keys(currencyFromECB.rates).map((sourceCurrency) => (
+            <option key={sourceCurrency}>
+              {sourceCurrency}
+            </option>
+          ))}
+        </Select>
+      </Margin>
+      <Margin>
+        <Label>Podaj kwotę: </Label>
+        <Select
+          as="input"
+          type="number"
+          value={sourceCurrencyValue}
+          onChange={(event) => setSourceCurrencyValue(event.target.value)}
+          name="kwota" min="0"
+          step="any"
+          autoFocus
+        />
+      </Margin>
+    </LabelFlex>
+  )
+};
+
+export default SourceCurrency;
+
+
+/*
+
+ (Object.keys(currencyFromECB)).map(cash => (
             <option key={cash}>
               {cash}
             </option>
           ))
-        }
-      </Select>
-    </Margin>
-    <Margin>
-      <Label>Podaj kwotę: </Label>
-      <Select
-        as="input"
-        type="number"
-        value={sourceCurrencyValue}
-        onChange={(event) => setSourceCurrencyValue(event.target.value)}
-        name="kwota" min="0"
-        step="any"
-        autoFocus
-      />
-    </Margin>
-  </LabelFlex>
-);
 
-export default SourceCurrency;
+          */

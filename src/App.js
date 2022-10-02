@@ -8,9 +8,9 @@ import Section from "./Section";
 import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
 import styled from "styled-components";
+import { useCurrencyFromECB } from "./CurrencyFromECB";
 
 function App() {
-
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
   const onSourceCurrencyChange = ({ target }) => setSourceCurrency(target.value);
@@ -20,14 +20,16 @@ function App() {
   const [targetCurrencyValue, setTargetCurrencyValue] = useState(0);
 
   const convertValue = () => {
+
     result(sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue);
   };
-
+  const currencyFromECB = useCurrencyFromECB();
   const USD = 4.28;
   const EUR = 4.59;
   const PLN = 1.00;
 
   const result = (sourceCurrency, targetCurrency, sourceCurrencyValue, targetCurrencyValue) => {
+
     setTargetCurrencyValue(() => {
       switch (sourceCurrency) {
         case "PLN":
@@ -98,7 +100,7 @@ function App() {
                 sourceCurrencyValue={sourceCurrencyValue}
               />}
           />}
-
+          
       />
     </Container >
   );

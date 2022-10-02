@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useCurrencyFromECB, currencyFromECB } from "./useCurrencyFromECB";
+//import { useCurrencyFromECB } from "./useCurrencyFromECB";
 import { Section } from "./styled";
 
 
-const CurrencyFromECB = () => {
+export const useCurrencyFromECB = () => {
 
-   const [currencyFromECB, setCurrencyFromECB] = useState([{
+   const [currencyFromECB, setCurrencyFromECB] = useState({
       date: "",
       rates: {}
-   }]);
+   });
+
+
    useEffect(() => {
       const response = fetch('https://api.exchangerate.host/latest?base=PLN')
          .then(response => response.json())
@@ -18,13 +20,9 @@ const CurrencyFromECB = () => {
                rates: response.rates
             }), 1000);
          })
-   }, [])
-   //console.log(currencyFromECB);
+         .then(console.log(currencyFromECB.rates))
+   }, []);
+
    
-   return (
-      <Section>{`Kursy walut pochodzą z dnia: ${(currencyFromECB.date)}`} </Section>
-   )
-
+   return currencyFromECB;
 };
-
-export default CurrencyFromECB;
