@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Section } from "./styled";
 
-
 export const useCurrencyFromECB = () => {
 
    const [currencyFromECB, setCurrencyFromECB] = useState({
@@ -10,15 +9,12 @@ export const useCurrencyFromECB = () => {
       state: "loading"
    });
 
-
    useEffect(() => {
       const fetchResponse = async () => {
          try {
             const response = await fetch('https://api.exchangerate.host/latest?base=PLN');
-
             if (!response.ok) {
                throw new Error(response.statusText);
-               console.log("bład");
             }
             const { date, rates } = await response.json();
             setCurrencyFromECB({
@@ -26,9 +22,6 @@ export const useCurrencyFromECB = () => {
                rates,
                state: "success"
             });
-
-            console.log("sukces");
-
          } catch {
             setCurrencyFromECB({
                //date: {},
@@ -38,9 +31,6 @@ export const useCurrencyFromECB = () => {
          }
       };
       setTimeout(fetchResponse, 1000);
-
    }, []);
-
-
    return currencyFromECB;
 };
