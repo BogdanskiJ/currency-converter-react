@@ -29,8 +29,8 @@ const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrency
                 <Select
                     as="input"
                     type="number"
-                    value={targetCurrencyValue}
-                    onChange={(event) => setTargetCurrencyValue(event.target.value).toFixed(2)}
+                    value={targetCurrencyValue.toFixed(2)}
+                    onChange={(event) => setTargetCurrencyValue(event.target.value)}
                     name="przeliczonaKwota"
                     placeholder="Kwota"
                 />

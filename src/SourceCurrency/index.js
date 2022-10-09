@@ -19,7 +19,8 @@ const SourceCurrency = ({
             <option key={sourceCurrency}>
               {sourceCurrency}
             </option>
-          ))}
+          ))
+          }
         </Select>
       </Margin>
       <Margin>

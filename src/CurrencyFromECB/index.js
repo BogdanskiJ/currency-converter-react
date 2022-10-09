@@ -7,7 +7,8 @@ export const useCurrencyFromECB = () => {
 
    const [currencyFromECB, setCurrencyFromECB] = useState({
       date: "",
-      rates: {}
+      rates: {},
+      value: 0
    });
 
 
@@ -17,12 +18,12 @@ export const useCurrencyFromECB = () => {
          .then(response => {
             setTimeout(() => setCurrencyFromECB({
                date: response.date,
-               rates: response.rates
+               rates: response.rates,
+               value: response.rates
             }), 1000);
          })
-         .then(console.log(currencyFromECB.rates))
    }, []);
 
-   
+
    return currencyFromECB;
 };
