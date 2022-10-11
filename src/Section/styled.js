@@ -15,7 +15,7 @@ export const SectionForm = styled.form`
     border-radius: 40px;
     border: 1px solid rgba(0, 0, 0, 0.434);
     background-color: rgb(246, 251, 244);
-    box-shadow: 8px 8px 24px 0px rgb(245 223 153);
+    box-shadow: 8px 8px 24px 0px rgb(0 0 0);
     padding: 10px;
     text-align: center;
 `;
