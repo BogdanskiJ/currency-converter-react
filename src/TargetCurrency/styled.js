@@ -8,7 +8,6 @@ export const LabelFlex = styled.label`
         align-items: center;
         flex-direction: column;
         margin: auto;
-    
 }
 `;
 
@@ -16,7 +15,6 @@ export const Margin = styled.div`
     margin: 10px;
     @media (max-width: 500px) {
         margin: 5px;
-    
 }
 `;
 
@@ -41,4 +39,11 @@ export const Select = styled.select`
     text-align: center;
     border: 1px rgb(0, 0, 0) solid;
     border-radius: 20px;
+`;
+
+export const LabelExchangeRate = styled.label`
+    max-width: 250px;
+    display: inline-block;
+    font-size: 0.8em;
+    color:#3a3a3a;
 `;

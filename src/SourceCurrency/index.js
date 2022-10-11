@@ -40,14 +40,3 @@ const SourceCurrency = ({
 };
 
 export default SourceCurrency;
-
-
-/*
-
- (Object.keys(currencyFromECB)).map(cash => (
-            <option key={cash}>
-              {cash}
-            </option>
-          ))
-
-          */

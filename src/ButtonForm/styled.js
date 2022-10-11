@@ -4,7 +4,7 @@ export const Buttonn = styled.button`
     width: 50%;
     border-radius: 10px;
     border: 1px rgb(0, 0, 0) solid;
-    background-color: hsl(173, 49%, 51%);
+    background-color: rgb(75, 134, 115);
     color: white;
     font-weight: 500;
 
@@ -14,13 +14,13 @@ export const Buttonn = styled.button`
         };
 
     &:hover {
-        background-color: hsl(173, 49%, 41%);
+        background-color: hsl(161, 28%, 31%);
         transform: scale(1.05);
         transition: 0.5s;
     };
 
     &:active {  
-        background-color: hsl(173, 49%, 31%);
+        background-color: hsl(161, 28%, 21%);
     };
 `;
 

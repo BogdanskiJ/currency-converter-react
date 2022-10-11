@@ -1,4 +1,4 @@
-import { Input, Label, LabelFlex, Margin, Select } from "./styled";
+import { Input, Label, LabelFlex, Margin, Select, LabelExchangeRate } from "./styled";
 
 import { useCurrencyFromECB } from "../CurrencyFromECB";
 
@@ -35,7 +35,7 @@ const TargetCurrency = ({ targetCurrency, onTargetCurrencyChange, targetCurrency
                     placeholder="Kwota"
                 />
             </Margin>
-            <Label>{`Kurs aktualny na dzień:  ${currencyFromECB.date}`}</Label>
+            <LabelExchangeRate>{`Kurs aktualny na dzień:  ${currencyFromECB.date}`}</LabelExchangeRate>
         </LabelFlex>
 
     )

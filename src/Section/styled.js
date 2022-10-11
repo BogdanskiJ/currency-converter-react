@@ -14,8 +14,8 @@ export const SectionForm = styled.form`
     max-width: 70%;
     border-radius: 40px;
     border: 1px solid rgba(0, 0, 0, 0.434);
-    background-color: #aeeae3;
-    box-shadow: 8px 8px 24px 0px rgba(126, 196, 188, 1);
+    background-color: rgb(246, 251, 244);
+    box-shadow: 8px 8px 24px 0px rgb(245 223 153);
     padding: 10px;
     text-align: center;
 `;
