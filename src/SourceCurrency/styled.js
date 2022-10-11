@@ -8,7 +8,6 @@ export const LabelFlex = styled.label`
         align-items: center;
         flex-direction: column;
         margin: auto;
-    
 }
 `;
 
@@ -16,7 +15,6 @@ export const Margin = styled.div`
     margin: 10px;
     @media (max-width: 500px) {
         margin: 5px;
-    
 }
 `;
 

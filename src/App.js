@@ -5,11 +5,10 @@ import ButtonForm from "./ButtonForm";
 import Container from "./Container";
 import Header from "./Header";
 import Section from "./Section";
-import axios from "axios";
 import TimeAndDate from "./TimeAndDate";
-import styled from "styled-components";
 import { useCurrencyFromECB } from "./CurrencyFromECB";
-
+import Fail from "./Fail";
+import Loading from "./Loading";
 function App() {
 
   const [sourceCurrency, setSourceCurrency] = useState("PLN");
@@ -39,32 +38,46 @@ function App() {
   return (
     <Container>
       <Header title="💰 KALKULATOR WALUT" />
-      <Section
-        timeAndDate={
-          <TimeAndDate />}
-        sourceCurrencySection={
-          <SourceCurrency
-            sourceCurrency={sourceCurrency}
-            setSourceCurrency={setSourceCurrency}
-            sourceCurrencyValue={sourceCurrencyValue}
-            setSourceCurrencyValue={setSourceCurrencyValue}
-            onSourceCurrencyChange={onSourceCurrencyChange}
-          />}
-        targetCurrencySection={
-          <TargetCurrency
-            targetCurrency={targetCurrency}
-            setTargetCurrency={setTargetCurrency}
-            targetCurrencyValue={targetCurrencyValue}
-            setTargetCurrencyValue={setTargetCurrencyValue}
-            onTargetCurrencyChange={onTargetCurrencyChange}
-            buttonForm={
-              <ButtonForm
-                convertValue={convertValue}
+      {currencyFromECB.state === "loading"
+        ? (
+          <Section
+            timeAndDate={<TimeAndDate />}
+            loading={<Loading />}
+          />
+        )
+        : (currencyFromECB.state === "fail"
+          ? (
+          <Section
+            timeAndDate={<TimeAndDate />}
+            loading={<Fail />}
+          />
+          )
+          : (<Section
+            timeAndDate={
+              <TimeAndDate />}
+            sourceCurrencySection={
+              <SourceCurrency
+                sourceCurrency={sourceCurrency}
+                setSourceCurrency={setSourceCurrency}
                 sourceCurrencyValue={sourceCurrencyValue}
+                setSourceCurrencyValue={setSourceCurrencyValue}
+                onSourceCurrencyChange={onSourceCurrencyChange}
               />}
-          />}
-
-      />
+            targetCurrencySection={
+              <TargetCurrency
+                targetCurrency={targetCurrency}
+                setTargetCurrency={setTargetCurrency}
+                targetCurrencyValue={targetCurrencyValue}
+                setTargetCurrencyValue={setTargetCurrencyValue}
+                onTargetCurrencyChange={onTargetCurrencyChange}
+                buttonForm={
+                  <ButtonForm
+                    convertValue={convertValue}
+                    sourceCurrencyValue={sourceCurrencyValue}
+                  />}
+              />}
+          />))
+      }
     </Container >
   );
 }
