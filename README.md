@@ -1,6 +1,7 @@
 # Currency converter - React
 
 ## Table of content
+
 - [Demo](#Demo)
 - [General info](#general-info)
 - [How it works?](#how-it-works)
@@ -9,21 +10,26 @@
 
 ## Demo
 
-[Currency Converter](https://kubabogd.github.io/currency-converter-react/)
+[Currency Converter](https://bogdanskij.github.io/currency-converter-react/)
+
 ## General info
+
 Currency conventer online. You can check how much money you have in foreign currency.
+
 ## How it works?
+
 ![CurrencyConverterReact](images/Currency-Converter-React.gif)
 
 ## Used Technologies
+
 Project is created with:
+
 - HTML
 - CSS
 - JavaScript
 - React
 - BEM
 - Create-React-App
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
